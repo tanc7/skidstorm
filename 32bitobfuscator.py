@@ -2,6 +2,20 @@ import random
 import textwrap
 import re
 
+# Generates random attack campaign key
+import secrets
+
+def generate_char_array(input_str, var_name="data"):
+    length = len(input_str) + 1  # +1 for null terminator
+    c_array = f'char {var_name}[{length}] = "{input_str}";'
+    return c_array
+def generate_random_hex(length=64):
+    return secrets.token_hex(length // 2)  # token_hex gives 2 chars per byte
+
+random_str = generate_random_hex()
+CAMPAIGN_KEY = generate_char_array(random_str)
+
+
 # MSVC Intrinsics Compatible Headers
 INCLUDE_HEADERS = textwrap.dedent("""
 #include <intrin.h>
@@ -68,7 +82,7 @@ def process_cpp_file(input_file, output_file):
         lines = infile.readlines()
     
     with open(output_file, 'w') as outfile:
-        outfile.write(INCLUDE_HEADERS + '\n')
+        outfile.write(INCLUDE_HEADERS + '\n' + CAMPAIGN_KEY + '\n')
         for line in lines:
             line = rename_variables(line)  # Ensure all 'x' and 't' have unique names
             line = insert_rop_and_cff(line)  # Replace ROP and CFF placeholders

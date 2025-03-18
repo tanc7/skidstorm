@@ -2,7 +2,7 @@ import sys
 import os
 
 # XOR key size (16 bytes)
-KEY_SIZE = 16
+KEY_SIZE = 15
 
 # Generate a random XOR key
 key = os.urandom(KEY_SIZE)

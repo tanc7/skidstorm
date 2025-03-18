@@ -1,6 +1,18 @@
 import random
 import textwrap
 import re
+# Generates random attack campaign key
+import secrets
+
+def generate_char_array(input_str, var_name="data"):
+    length = len(input_str) + 1  # +1 for null terminator
+    c_array = f'char {var_name}[{length}] = "{input_str}";'
+    return c_array
+def generate_random_hex(length=64):
+    return secrets.token_hex(length // 2)  # token_hex gives 2 chars per byte
+
+random_str = generate_random_hex()
+CAMPAIGN_KEY = generate_char_array(random_str)
 
 # MSVC Intrinsics Compatible Headers
 INCLUDE_HEADERS = textwrap.dedent("""
@@ -9,7 +21,6 @@ INCLUDE_HEADERS = textwrap.dedent("""
 #include <cstdlib>
 #define _INTERLOCKED_INTRINSICS_SUPPORTED
 #define _AMD64_  // Force expose 64-bit intrinsic prototypes if needed
-char data[64] = "592ea92cef33d0206701e0d5bb2f8880eea5653a71e0e8aaa0bd8ed90763c91";
 
 """)
 
@@ -169,6 +180,18 @@ def process_cpp_file(input_file, output_file):
     
     with open(output_file, 'w') as outfile:
         outfile.write(INCLUDE_HEADERS + '\n')
+        for line in lines:
+            line = rename_variables(line)  # Ensure all 'x' and 't' have unique names
+            line = insert_rop_and_cff(line)  # Replace ROP and CFF placeholders
+            outfile.write(line + '\n')
+
+# Process Input C++ File
+def process_cpp_file(input_file, output_file):
+    with open(input_file, 'r') as infile:
+        lines = infile.readlines()
+
+    with open(output_file, 'w') as outfile:
+        outfile.write(INCLUDE_HEADERS + '\n' + CAMPAIGN_KEY + '\n')
         for line in lines:
             line = rename_variables(line)  # Ensure all 'x' and 't' have unique names
             line = insert_rop_and_cff(line)  # Replace ROP and CFF placeholders
