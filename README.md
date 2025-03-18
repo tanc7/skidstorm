@@ -9,6 +9,7 @@ Another detection trick is XOR obfuscation loops. You can sandwich control-flow 
 # Training video
 
 Please see the silent training video for how to use.
+[SCUD STORM Training Video](https://youtu.be/b0pUnv_2Tk0)
 
 # Mixed Boolean Arithmetics
 
@@ -43,5 +44,5 @@ I am a huge hater of copy-and-paste types that compile payloads, submit them to 
 
 I have updated versions of SCUDSTORM at all times to implement kernel-driver attacks through a hidden DLL to escalate privileges on the implant, as well as another module to inject rootkit installers into sacrificial apps. These versions are not for public release and is the property of Cybersecurity & Growth by Daniel M. Kelley and scamkillers.org
 
-
-
+The name itself came from a superweapon in a video game called Command & Conquer: Generals.
+[Overpowered SCUD Storm](https://youtu.be/PKmuqkPiuIA?si=63hzbZ9ZyXs_bF9-)
