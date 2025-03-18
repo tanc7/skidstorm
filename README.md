@@ -37,6 +37,8 @@ The xorshellcoderunner.c file is NOT meant to be compiled, you run the 64bitobfu
 
 # The name
 
+This is the ONLY release.
+
 I am a huge hater of copy-and-paste types that compile payloads, submit them to VirusTotal, and then go to their local powerpoint meeting to chase clout among the ignorant corpos. They win no respect from their technical teams that they are laying off anyways. Therefore, public releases of SCUDSTORM is now called SKIDSTORM. If you want to do something original, go fork this repo and do it on your own. Or call it something else. 
 
 I have updated versions of SCUDSTORM at all times to implement kernel-driver attacks through a hidden DLL to escalate privileges on the implant, as well as another module to inject rootkit installers into sacrificial apps. These versions are not for public release and is the property of Cybersecurity & Growth by Daniel M. Kelley and scamkillers.org
