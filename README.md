@@ -9,7 +9,7 @@ Another detection trick is XOR obfuscation loops. You can sandwich control-flow 
 # Training video
 
 Please see the silent training video for how to use.
-[SCUD STORM Training Video](https://youtu.be/b0pUnv_2Tk0)
+[SCUD STORM Training Video](https://youtu.be/VxMo6JfrHHQ)
 
 # Mixed Boolean Arithmetics
 
