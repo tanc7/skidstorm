@@ -11,6 +11,12 @@ Another detection trick is XOR obfuscation loops. You can sandwich control-flow 
 Please see the silent training video for how to use.
 [SCUD STORM Training Video](https://youtu.be/VxMo6JfrHHQ)
 
+There will be a series of training videos with this specific one and only release version to demonstrate obfuscation tricks to make this technique continually viable.
+
+Obfuscation is a constant evolving art, and in the black hat community, master obfuscators are called "crypters"
+
+[Brian Krebs: Why Malware Crypting Services Deserve More Scrutiny](https://krebsonsecurity.com/2023/06/why-malware-crypting-services-deserve-more-scrutiny)
+
 # Mixed Boolean Arithmetics
 
 In the prototypes.h file you can find seven different obfuscated XOR macros that you can use instead of a simple hat ^ bitwise operator.
@@ -36,7 +42,7 @@ The xorshellcoderunner.c file is NOT meant to be compiled, you run the 64bitobfu
 10. Decoded MSF payload
 
 
-# The name
+# The name inspiration and that this is the only release.
 
 This is the ONLY release.
 
@@ -45,4 +51,4 @@ I am a huge hater of copy-and-paste types that compile payloads, submit them to 
 I have updated versions of SCUDSTORM at all times to implement kernel-driver attacks through a hidden DLL to escalate privileges on the implant, as well as another module to inject rootkit installers into sacrificial apps. These versions are not for public release and is the property of Cybersecurity & Growth by Daniel M. Kelley and scamkillers.org
 
 The name itself came from a superweapon in a video game called Command & Conquer: Generals.
-[Overpowered SCUD Storm](https://youtu.be/PKmuqkPiuIA?si=63hzbZ9ZyXs_bF9-)
+[Overpowered SCUD Storm](https://youtu.be/PKmuqkPiuIA?si=Q6lAO6KMfbibn92w&t=1200)
